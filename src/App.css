@@ -175,7 +175,6 @@ button{
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
-
 }
 .image{
   height: 23vh;
@@ -198,6 +197,7 @@ button{
   flex-direction: row;
   gap: 20px;
   background-color: black;
+  border: 1px solid #202020;
 }
 .inner-controller > .sub > button{
   background-color: #202020;
@@ -213,8 +213,6 @@ button{
   padding: 12px;
   border-radius: 4px;
 }
-
-
 h2{
   color: white;
   filter: brightness(100%);
@@ -252,6 +250,7 @@ h2{
 .offers-card{
   background:linear-gradient(to bottom left, rgba(78, 10, 10, 0.6), rgba(27, 1, 1, 0.7),rgba(0, 0, 0, 0.75), rgba(0, 1, 1, 0.9), rgba(0, 0, 0, 1), rgba(0, 0, 0, 1.1));
   border-radius: 10px;
+  border: 1px solid #202020;
 }
 .access-offer{
   display: flex;
@@ -358,6 +357,7 @@ h3{
 .plan-card{
   background-color: #1a1a1a;
   border-radius: 10px;
+  border: 1px solid #3f3f3f;
 }
 .one-t-th{
   display: flex;
@@ -377,6 +377,7 @@ h3{
 }
 .first-button button:first-child{
   background-color: #0e0d0d;
+  border: 1px solid #202020;
 }
 .first-button button{
   width: 140px;
@@ -387,6 +388,8 @@ h3{
 }
 .free-trial{
   background-color: #0e0d0d;
+  border: 1px solid #e7e1e1;
+  width: 100%;
 }
 .trial-container > .trial-image{
   display: flex;
@@ -415,15 +418,29 @@ h3{
 .trial-image{
   position: relative;
   background: url(/public/images/image.png);
-  background-position: center;
+  background-position: start;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: darken;
   height: 20vh;
-  width: 86.5%;
+  width: 95%;
 }
 .trial-container{
-  padding: 80px;
+  padding-left: 80px;
+  margin-left: -10px;
+}
+.inner, .action-page{
+  border: 1px solid #9a9999;
+  background-color: #202020;
+  border-radius: 5px;
+}
+.action-page{
+  height: 200px;
+}
+.comedy-page{
+  border: 1px solid #202020;
+  background-color: #202020;
+  border-radius: 5px;
 }
 .trial-image::before{
   content: '';
@@ -499,29 +516,42 @@ border-right: 1px solid #999;
 ::-webkit-scrollbar-thumb:hover{
   background-color: #202020;
 }
+#start-watching{
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
 
-@media (max-width: 480px) and (min-width: 360px) {
+@media (max-width: 480px) and (min-width: 320px) {
   .links, .fa-magnifying-glass, .fa-bell{
       display: none;
   }
   h1{
-      font-size: 25px;
+      font-size: 1.6rem;
       text-align: center;
   }
-  h2, h3{
-      font-size: 20px;
+  h2{
+      font-size: 1.4rem;
   }
   p{
-      font-size: 15px;
+      font-size: 0.95rem;
   }
   .box-1{
       display: flex;
       flex-direction: row;
       gap: 80px;
-
+  }
+  .trial-note  h2{
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  .trial-note  p{
+    text-align: center;
+    font-size: 1rem;
   }
   button{
-      height: 40px;
+      height: 30px;
       padding: 8px;
   }
   i.fa-bars-staggered{
@@ -540,7 +570,7 @@ border-right: 1px solid #999;
   .grid-layout{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 230px;
+      grid-template-rows: 260px;
       overflow-x:auto;
   }
   .card{
@@ -604,7 +634,6 @@ border-right: 1px solid #999;
       flex-direction: column;
       gap: 9px;
       align-items: center;
-      text-align: center;
   }
   .end-page{
       display: flex;
@@ -623,34 +652,54 @@ border-right: 1px solid #999;
   .first-price p span{
       font-size: 20px;
   }
+  .trial-image::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(116, 4, 4, 0.4), rgba(114, 4, 4, 0.5), rgba(112, 4, 4, 0.6), rgba(110, 4, 4, 0.7), rgba(30, 11, 11, 0.8), rgba(5, 2, 2, 0.9), rgba(7, 2, 2, 1));
+  }
+  .trial-button button{
+    padding: 1.1rem;
+    text-align: center;
+  }
+  .trial-button button div{
+    margin-top: -5px;
+  }
 }
-@media (max-width: 800px) and (min-width: 480px) {
+@media (max-width: 360px) and (min-width: 100px) {
   .links, .fa-magnifying-glass, .fa-bell{
       display: none;
   }
   h1{
-      font-size: 25px;
+      font-size: 1.2rem;
       text-align: center;
   }
   h2, h3{
-      font-size: 20px;
+      font-size: 0.8rem;
   }
   p{
-      font-size: 15px;
+      font-size: 0.65rem;
+  }
+  .trial-note  h2{
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .trial-note  p{
+    text-align: center;
+    font-size: 0.8rem;
   }
   button{
-      height: 40px;
-      padding: 8px;
+      height: 30px;
+      width: fit-content;
+      padding: 4px;
   }
   .box-1{
       display: flex;
       flex-direction: row;
       gap: 80px;
-      
-  }
-  i.fa-bars-staggered{
-      display: contents;
-      color: white;
   }
   .navbar > img{
       height: 40%;
@@ -689,130 +738,14 @@ border-right: 1px solid #999;
   .plan-grid{
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 220px 220px 220px;
-  }
-  .trial-container{
-      padding: 10px 0 10px 20px;
-      width: 73vw;
-  }
-  .inner-footer{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      gap: 10px;
-  }
-  .inner-plan, .inner-question, .inner-offer, .inner-footer{
-      padding: 30px;
-  }
-  .not-available{
-      display: none;
-  }
-  .access-offer{
-      padding: 20px;
-  }
-  .one-t-th{
-      padding: 10px;
-  }
-  .show{
-      display: contents;
-  }
-  .control, .question-button{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: start;
-      padding-top: 20px;
-  }
-  .trial-container > .trial-image{
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-  }
-  .end-page{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 0 10px 0 10px;
-  }
-  .border > div{
-      border: none;
-  }
-  .border{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-  }
-  .first-price p span{
-      font-size: 25px;
-  }
-}
-@media (max-width: 360px) and (min-width: 100px) {
-  .links, .fa-magnifying-glass, .fa-bell{
-      display: none;
-  }
-  h1{
-      font-size: 20px;
-      text-align: center;
-  }
-  h2, h3{
-      font-size: 13px;
-  }
-  p{
-      font-size: 11px;
-  }
-  button{
-      height: 30px;
-      width: fit-content;
-      padding: 4px;
-  }
-  .box-1{
-      display: flex;
-      flex-direction: row;
-      gap: 80px;
-      
-  }
-  .navbar > img{
-      height: 40%;
-      width: 40%;
-  }
-  .navbar{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-  }
-  .grid-layout{
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 180px;
-      overflow-x:auto;
-  }
-  .card{
-      width: 180px;
-  }
-  .sub-explore{
-      padding: 60px 15px 10px 15px;
-  }
-  .inner-controller{
-      display: none;
-  }
-  .offers-grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 160px 160px 160px 160px 160px 160px;
-  }
-  .question-grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
-  }
-  .plan-grid{
-      display: grid;
-      grid-template-columns: 1fr;
       grid-template-rows: 180px 180px 180px;
   }
   .trial-container{
       padding: 10px 0 10px 20px;
       width: 40%;
+  }
+  .trial-image{
+    width: 120%;
   }
   .inner-footer{
       display: grid;
@@ -850,6 +783,13 @@ border-right: 1px solid #999;
       align-items: center;
       text-align: center;
   }
+  .trial-button button{
+    padding: 1.7rem;
+    text-align: center;
+  }
+  .trial-button button div{
+    margin-top: -5px;
+  }
   .end-page{
       display: flex;
       flex-direction: column;
@@ -867,11 +807,333 @@ border-right: 1px solid #999;
   .first-price p span{
       font-size: 20px;
   }
+  .trial-image::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(116, 4, 4, 0.4), rgba(114, 4, 4, 0.5), rgba(112, 4, 4, 0.6), rgba(110, 4, 4, 0.7), rgba(30, 11, 11, 0.8), rgba(5, 2, 2, 0.9), rgba(7, 2, 2, 1));
+  }
 }
-@media  (min-width: 800px) {
+@media (min-width: 480px) and (max-width: 719px){
+    .links, .fa-magnifying-glass, .fa-bell, .not-available{
+        display: none;
+    }
+    h1{
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    h2, h3{
+        font-size: 1.1rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    button{
+        height: 40px;
+        padding: 8px;
+    }
+    .box-1{
+        display: flex;
+        flex-direction: row;
+        gap: 190px;
+    }
+    i.fa-bars-staggered{
+        display: contents;
+        color: white;
+    }
+    .navbar > img{
+        height: 40%;
+        width: 40%;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .grid-layout{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 230px;
+        overflow-x:auto;
+    }
+    .card{
+        width: 180px;
+    }
+    .sub-explore{
+        padding: 60px 15px 10px 15px;
+    }
+    .inner-controller{
+        display: none;
+    }
+    .offers-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 160px 160px;
+    }
+    .offers-p p{
+      font-size: 0.5rem;
+    }
+    .off-img h3{
+      font-size: 0.7rem;
+    }
+    svg{
+      width: 20px;
+      height: 28px;
+    }
+    .trial-container{
+      padding: 10px 0 10px 20px;
+      width: 70%;
+  }
+    .question-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 50px);
+    }
+    .free-trial{
+      width: 100%;
+      border: none;
+    }
+    .plan-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 220px);
+    }
+    .container{
+        padding: 10px 0 10px 20px;
+        width: 73vw;
+    }
+    .inner-footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+    .inner-plan, .inner-question, .inner-offer, .inner-footer{
+        padding: 30px;
+    }
+    .access-offer{
+        padding: 20px;
+    }
+    .one-t-th{
+        padding: 10px;
+    }
+    .show{
+        display: contents;
+    }
+    .control, .question-button{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+        padding-top: 20px;
+    }
+    .trial-container > .trial-image{
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+    }
+    .end-page{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 10px 0 10px;
+    }
+    .border > div{
+        border: none;
+    }
+    .border{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .first-price p span{
+        font-size: 25px;
+    }
+  }
+  @media (min-width: 720px) and (max-width: 999px){
+    .links, .fa-magnifying-glass, .fa-bell, .not-available{
+      display: none;
+  }
+  h1{
+      font-size: 1.6rem;
+      text-align: center;
+  }
+  h2, h3{
+      font-size: 1.1rem;
+  }
+  p{
+      font-size: 0.9rem;
+  }
+  button{
+      height: 40px;
+      padding: 8px;
+  }
+  .box-1{
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      align-items: center;
+  }
+  i.fa-bars-staggered{
+      display: contents;
+      color: white;
+  }
+  #start-watching svg{
+    width: 12px;
+    height: 13px;
+  }
+  .inner-p i{
+    font-size: 12px;
+  }
+  .navbar > img{
+      height: 40%;
+      width: 40%;
+  }
+  .navbar{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .grid-layout{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 230px;
+      overflow-x:auto;
+  }
+  .card{
+      width: 180px;
+  }
+  .sub-explore{
+      padding: 60px 15px 10px 15px;
+  }
+  .inner-controller{
+      display: none;
+  }
+  .offers-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 160px 160px;
+  }
+  .offers-p p{
+    font-size: 0.7rem;
+  }
+  .off-img h3{
+    font-size: 0.9rem;
+  }
+  svg{
+    width: 25px;
+    height: 32px;
+  }
+  .trial-container{
+    padding: 10px 0 10px 20px;
+    width: 70%;
+}
+.getstarted{
+  margin-top: -120px;
+}
+.navbar img{
+  height: auto;
+  width: 210px;
+}
+.box-1 h3{
+  font-size: 1rem;
+}
+  .question-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, 50px);
+  }
+  .question-card{
+    width: 100%;
+  }
+  .free-trial{
+    width: 100%;
+    border: none;
+  }
+  .plan-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 220px);
+  }
+  .container{
+      padding: 10px 0 10px 20px;
+      width: 73vw;
+  }
+  .inner-footer{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 10px;
+  }
+  .inner-plan, .inner-question, .inner-offer, .inner-footer{
+      padding: 30px;
+  }
+  .access-offer{
+      padding: 20px;
+  }
+  .one-t-th{
+      padding: 10px;
+  }
+  .show{
+      display: contents;
+  }
+  .control, .question-button{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: start;
+      padding-top: 20px;
+  }
+  .trial-container > .trial-image{
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+  }
+  .trial-container{
+    width: 80%;
+  }
+  .end-page{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0 10px 0 10px;
+  }
+  .border > div{
+      border: none;
+  }
+  .border{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .first-price p span{
+      font-size: 25px;
+  }
+}
+@media  (min-width: 1000px)  {
   .navbar > img{
       height: 20%;
       width: 20%;
+  }
+  .big{
+    display: none;
+  }
+  .free-trial{
+    width: 96.9vw;
+    border: none;
+    padding: 20px;
+  }
+  .trial-container{
+    margin-left: 60px;
+    width: 85%;
+    border-radius: 5px;
+  }
+  .trial-image{
+    margin-left: -100px;
+    padding: 10px;
   }
   .navbar{
       display: flex;
@@ -882,10 +1144,15 @@ border-right: 1px solid #999;
       padding: 16px;
       width: 25vw;
   }
-  .show{
+  .show, .big{
       display: contents;
   }
   .bar{
       display: none;
   }
+  .box-1{
+    display: flex;
+    flex-direction: row;
+    gap: 280px;
+}
 }
